@@ -21,7 +21,10 @@
 				"path": "/usr/local/bin/radian",
 				"overrideName": true
 			}
-		}
+		},
+		"editor.bracketPairColorization.enabled": true,
+		"editor.fontSize": 20,
+		"terminal.integrated.fontSize": 20
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.

@@ -30,7 +30,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 
 RUN apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends libcurl4-openssl-dev libssl-dev libxml2-dev libcoin-dev libnode-dev \
+    && apt-get -y install --no-install-recommends libcurl4-openssl-dev libssl-dev libxml2-dev libcoin-dev libnode-dev libglpk-dev \
     && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts && rm -rf /tmp/downloaded_packages    
 
 # VSCode R Debugger dependency, install the latest release version from GitHub.
@@ -43,7 +43,7 @@ RUN echo 'source(file.path(Sys.getenv("HOME"), ".vscode-R", "init.R"))' >> ${R_H
 RUN install2.r --error --skipinstalled --ncpus -1 renv
 
 # Make folder for mount
-RUN mkdir /home/${USERNAME}/.cache/R/renv/binary \
-  && mkdir /home/${USERNAME}/.cache/R/renv/cache \
-  && mkdir /home/${USERNAME}/.cache/R/renv/source \
+RUN mkdir -p /home/${USERNAME}/.cache/R/renv/binary \
+  && mkdir -p /home/${USERNAME}/.cache/R/renv/cache \
+  && mkdir -p /home/${USERNAME}/.cache/R/renv/source \
   && chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}/.cache
