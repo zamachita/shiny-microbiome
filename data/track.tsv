@@ -1,0 +1,9 @@
+	input	filtered	denoised	non-chimeric
+C001.extendedFrags.fastq.gz	9463	9265	4717	4685
+C002.extendedFrags.fastq.gz	9781	9597	5110	5078
+C003.extendedFrags.fastq.gz	9801	9622	5770	5742
+C004.extendedFrags.fastq.gz	9798	9667	5068	5006
+C005.extendedFrags.fastq.gz	9276	9028	5651	5617
+C006.extendedFrags.fastq.gz	9214	8974	5105	5065
+C007.extendedFrags.fastq.gz	9170	8942	5086	5071
+C008.extendedFrags.fastq.gz	9424	9216	4831	4831
