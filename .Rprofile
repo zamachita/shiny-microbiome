@@ -1,3 +1,3 @@
 source("renv/activate.R")
-renv::install("languageserver")
-renv::install("httpgd")
+
+# options(langserver_library = "/desired/path/to/library")
