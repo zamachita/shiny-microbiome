@@ -85,6 +85,7 @@ FastMelt <- function(physeq, includeSampleVars = character()) {
   return(mdt)
 }
 
+#' Quote version of fastmelt
 FastMelt.Q <- function(physeq, ...) {
 
   includeSampleVarsS <- ensyms(...)
@@ -93,11 +94,13 @@ FastMelt.Q <- function(physeq, ...) {
   FastMelt(physeq, includeSampleVars)
 }
 
+#' Quote version of aggregate taxa
 AggregateTaxa.Q <- function(ps, taxa_lvl, verbose = FALSE){
 
   txt <- rlang::as_label(rlang::enquo(taxa_lvl))
   microbiome::aggregate_taxa(ps, txt, verbose)
 }
+
 
 AggregateTaxa <- function(.ps, rank="ASV"){
   if (rank == "ASV"){

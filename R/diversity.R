@@ -1,5 +1,8 @@
 source("R/common.R")
 
+library(microbiome)
+library(vegan)
+
 ###
 ### ALPHA DIVERSITY
 ###
@@ -98,8 +101,59 @@ plot_alpha(adiv_ps, "phylum", "GROUP_name")
 plot_alpha(adiv_ps, "phylum", "DATE_hour")
 
 
-#
+##
 # Beta diversity
+##
+bdiv_ps <- tibble(
+  ps = list(ps.filt)
+) %>%
+  expand_grid(rank=c("family", "ASV")) %>%
+  expand_grid(a_distance=c("bray", "jaccard", "unifrac")) %>%  # Get sort metadata
+  dplyr::filter(rank == "ASV" | a_distance != "unifrac") %>%
+  rowwise() %>%
+  mutate(
+    dstmtx = list(ps %>% 
+      AggregateTaxa(rank) %>%
+      microbiome::transform("hellinger") %>%
+      phyloseq::distance(method = a_distance, parallel = TRUE)),
+    PCoA = list(cmdscale(dstmtx)
+    ),
+    NMDS_log = list(
+      quietly(vegan::metaMDS)(dstmtx)
+    ),
+    NMDS = list(
+      NMDS_log$result
+    )
+  )
+
+# TODO: make this into function PLOT_NMDS
+DAT <- bdiv_ps$NMDS[[3]]
+METADATA <- ps.filt %>% meta() %>% as_tibble(rownames = "ID_samples")
+COLOR <- "GROUP_name"
+
+# TODO: make this into function PLOT_NMDS(nmds_dat, metadata, color)
+COLOR_q <- ensym(COLOR)
+DAT %>%
+  vegan::scores(display = "sites") %>%
+  as_tibble(rownames = "ID_samples") %>%
+  left_join(METADATA) %>%
+  ggplot(aes(x = NMDS1, y = NMDS2, color = {{COLOR_q}})) +
+    geom_point() +
+    stat_ellipse()
+
+  
+
+# TODO: make this into function REPORT_EXCEL
+# DAT %>%
+#   vegan::scores(display = "sites")
+  
+
+
+# TODO: Plot
+
+
+# Export data
+# TODO: Create function to export all data in excel.
 
 
 # Save plot
