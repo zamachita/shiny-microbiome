@@ -1,6 +1,7 @@
 source("R/common.R")
 
 library(pheatmap)
+library(ANCOMBC)
 
 hm_phy <- pheatmap(
   WideVar(ps.filt, phylum, 50),
@@ -41,7 +42,35 @@ stats_ttest <- tibble(
     )
   )
 
+PS_OBJ <- ps.filt
+
+stats_ancom <- tibble(
+  ps = list(PS_OBJ)
+) %>%
+  expand_grid(rank = c("family", "genus", "ASV")) %>%
+  rowwise() %>%
+  mutate(
+    stat_ancom_reduced = list(PS_OBJ %>%
+      AggregateTaxa(rank) %>%
+      ancombc(phyloseq = ., formula = "GROUP_name")
+    ),
+    stat_ancom_interact = list(PS_OBJ %>%
+      AggregateTaxa(rank) %>%
+      ancombc(phyloseq = ., formula = "DATE_hour * GROUP_name")
+    )
+  )
+
+stats_ancom <- stats_ancom %>%
+  ungroup() %>%
+  mutate(
+    across(
+      starts_with("stat_ancom"),
+      ~ map(., TidyAncomAll),
+      .names = "tidy_{col}"
+    )
+  )
+
+
 # TODO
 # 1. Let user choose which rank to export (phylum, order, family)
-# 2. Export stat_ttest to excel
-
+# 2. Show table stats_ancom$tidy_stat_ancom_reduced[[1]]

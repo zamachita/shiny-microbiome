@@ -8,6 +8,7 @@ library(cowplot)
 source("R/lib/lhs.R")
 source("R/lib/lib.R")
 source("R/lib/plot.R")
+source("R/lib/tidy_lib.R")
 
 
 ps <- ReadQiime2(

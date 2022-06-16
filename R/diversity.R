@@ -126,7 +126,7 @@ bdiv_ps <- tibble(
     )
   )
 
-# TODO: make this into function PLOT_NMDS
+# TODO: make this into function PLOT_NMDS ( color must be selectable)
 DAT <- bdiv_ps$NMDS[[3]]
 METADATA <- ps.filt %>% meta() %>% as_tibble(rownames = "ID_samples")
 COLOR <- "GROUP_name"
@@ -142,11 +142,13 @@ DAT %>%
     stat_ellipse()
 
   
-
+library(openxlsx)
 # TODO: make this into function REPORT_EXCEL
-# DAT %>%
-#   vegan::scores(display = "sites")
-  
+DAT %>%
+  vegan::scores(display = "sites")
+
+# See write.xlsx()
+
 
 
 # TODO: Plot
