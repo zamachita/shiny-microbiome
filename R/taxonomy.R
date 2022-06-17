@@ -1,6 +1,7 @@
 source("R/common.R")
 
 library(pheatmap)
+library(rstatix)
 library(ANCOMBC)
 
 hm_phy <- pheatmap(
@@ -15,7 +16,7 @@ hm_phy
 # Statistics
 ##
 
-PS <- ps_filt
+PS <- ps.filt
 stats_ttest <- tibble(
     rank = c("phylum", "order", "family", "genus", "ASV")
   ) %>%
@@ -29,21 +30,23 @@ stats_ttest <- tibble(
     ),
     stat_ttest_log = list(
       df_melt %>%
-        group_by(TaxaID, c_age.group) %>%  # TODO let user choose which column to use instead of hardcode (c_age.group)
+        group_by(TaxaID, DATE_hour) %>%  # TODO let user choose which column to use instead of hardcode (c_age.group)
         quietly(t_test)(abn ~ GROUP_name)    # TODO let user choose which column to use instead of hardcode (GROUP_name)
     ),
     stat_ttest = list(
       stat_ttest_log %>%
         pluck("result") %>%
         dplyr::filter(! is.nan(df)) %>%
-        group_by(c_age.group) %>%  # TODO let user choose which column to use instead of hardcode (c_age.group)
+        group_by(DATE_hour) %>%  # TODO let user choose which column to use instead of hardcode (c_age.group)
         adjust_pvalue(method = "holm") %>%
         add_significance("p.adj")
     )
   )
 
-PS_OBJ <- ps.filt
+# TODO: show this table
+stats_ttest$stat_ttest[[3]]
 
+PS_OBJ <- ps.filt
 stats_ancom <- tibble(
   ps = list(PS_OBJ)
 ) %>%
