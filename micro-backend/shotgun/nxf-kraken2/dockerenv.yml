@@ -1,0 +1,16 @@
+name: nextflow-kraken2
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - fastp
+  - kraken2
+  - bracken=2.6.0
+  - krona
+  - pandoc
+  - r-base
+  - r-data.table
+  - r-dplyr
+  - r-tidyr
+  - r-dt
+  - r-d3heatmap
