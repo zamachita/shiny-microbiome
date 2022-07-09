@@ -190,10 +190,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
       <div class="container-fluid">
 
-        <!-- SELECT2 EXAMPLE -->
+        <!-- GRAPH EXAMPLE 2 COLUMN / ROW -->
         <div class="card card-default">
           <div class="card-header">
-            <h3 class="card-title">Select2 (Default Theme)</h3>
+            <h3 class="card-title">Alpha Diversity</h3>
 
             <div class="card-tools">
               <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -205,189 +205,135 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
-                A
+                <img class="img-fluid pad" src="dist/img/demo/alpha-diversity_strarified-by-age_nosig.png" alt="Photo">
               </div>
               <!-- /.col -->
               <div class="col-md-6">
-                <div class="form-group">
-                  <label>Multiple</label>
-                  <select class="select2" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
-                    <option>Alabama</option>
-                    <option>Alaska</option>
-                    <option>California</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
-                  </select>
-                </div>
-                <!-- /.form-group -->
-                <div class="form-group">
-                  <label>Disabled Result</label>
-                  <select class="form-control select2" style="width: 100%;">
-                    <option selected="selected">Alabama</option>
-                    <option>Alaska</option>
-                    <option disabled="disabled">California (disabled)</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
-                  </select>
-                </div>
-                <!-- /.form-group -->
+                <img class="img-fluid pad" src="dist/img/demo/alpha-diversity_trajectory.png" alt="Photo">
               </div>
               <!-- /.col -->
             </div>
             <!-- /.row -->
 
-            <h5>Custom Color Variants</h5>
-            <div class="row">
-              <div class="col-12 col-sm-6">
-                <div class="form-group">
-                  <label>Minimal (.select2-danger)</label>
-                  <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
-                    <option selected="selected">Alabama</option>
-                    <option>Alaska</option>
-                    <option>California</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
-                  </select>
-                </div>
-                <!-- /.form-group -->
-              </div>
-              <!-- /.col -->
-              <div class="col-12 col-sm-6">
-                <div class="form-group">
-                  <label>Multiple (.select2-purple)</label>
-                  <div class="select2-purple">
-                    <select class="select2" multiple="multiple" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
-                      <option>Alabama</option>
-                      <option>Alaska</option>
-                      <option>California</option>
-                      <option>Delaware</option>
-                      <option>Tennessee</option>
-                      <option>Texas</option>
-                      <option>Washington</option>
-                    </select>
-                  </div>
-                </div>
-                <!-- /.form-group -->
-              </div>
-              <!-- /.col -->
-            </div>
-            <!-- /.row -->
           </div>
         </div>
         <!-- /.card -->
 
-        <!-- Row EDIT Here! -->
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card card-default">
-              <div class="card-header">
-                <h3 class="card-title">Contact</h3>
-              </div>
-              <div class="card-body">
-                <p class="card-text">Project owner email. The platform will notify you when your project is finished. Please be patient.</p>
-                <!-- form start -->
-              <form>
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                  </div>
-                </div>
-                <!-- /.card-body -->
-                <!-- <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div> -->
-              </form>
-              </div>
+        <!-- GRAPH EXAMPLE 2 COLUMN / ROW -->
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title">Beta Diversity</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
             </div>
           </div>
-        </div><!-- /.row -->
-
-        <!-- Row -->
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card card-default">
-              <div class="card-header">
-                <h3 class="card-title">Project samples (FASTQ Binary .gz)</h3>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img class="img-fluid pad" src="dist/img/demo/beta-diversity_a-family.png" alt="Photo">
               </div>
-              <div class="card-body">
-                <p class="card-text">Uploading a meta data (file type CSV) and multiple sample files. (file type .gz)</p>
-                <div id="actions" class="row">
-                  <div class="col-lg-6">
-                    <div class="btn-group w-100">
-                      <span class="btn btn-success col fileinput-button">
-                        <i class="fas fa-plus"></i>
-                        <span>Add files</span>
-                      </span>
-                      <button type="submit" class="btn btn-primary col start">
-                        <i class="fas fa-upload"></i>
-                        <span>Start upload</span>
-                      </button>
-                      <button type="reset" class="btn btn-warning col cancel">
-                        <i class="fas fa-times-circle"></i>
-                        <span>Cancel upload</span>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 d-flex align-items-center">
-                    <div class="fileupload-process w-100">
-                      <div id="total-progress" class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                        <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="table table-striped files" id="previews">
-                  <div id="template" class="row mt-2">
-                    <div class="col-auto">
-                        <span class="preview"><img src="data:," alt="" data-dz-thumbnail /></span>
-                    </div>
-                    <div class="col d-flex align-items-center">
-                        <p class="mb-0">
-                          <span class="lead" data-dz-name></span>
-                          (<span data-dz-size></span>)
-                        </p>
-                        <strong class="error text-danger" data-dz-errormessage></strong>
-                    </div>
-                    <div class="col-4 d-flex align-items-center">
-                        <div class="progress progress-striped active w-100" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                          <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
-                        </div>
-                    </div>
-                    <div class="col-auto d-flex align-items-center">
-                      <div class="btn-group">
-                        <button class="btn btn-primary start">
-                          <i class="fas fa-upload"></i>
-                          <span>Start</span>
-                        </button>
-                        <button data-dz-remove class="btn btn-warning cancel">
-                          <i class="fas fa-times-circle"></i>
-                          <span>Cancel</span>
-                        </button>
-                        <button data-dz-remove class="btn btn-danger delete">
-                          <i class="fas fa-trash"></i>
-                          <span>Delete</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <!-- /.col -->
+              <div class="col-md-6">
+                <img class="img-fluid pad" src="dist/img/demo/beta-diversity_b-asv.png" alt="Photo">
               </div>
-              <!-- /.card-body -->
-              <div class="card-footer">
-                <!-- Visit <a href="https://www.dropzonejs.com">dropzone.js documentation</a> for more examples and information about the plugin. -->
-              </div>
+              <!-- /.col -->
             </div>
-            <!-- /.card -->
+            <!-- /.row -->
+
           </div>
         </div>
-        <!-- /.row -->
+        <!-- /.card -->
+
+        <!-- GRAPH EXAMPLE 2 COLUMN / ROW -->
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title">Beta Diversity (PCA)</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img class="img-fluid pad" src="dist/img/demo/beta-diversity-pca_a-family.png" alt="Photo">
+              </div>
+              <!-- /.col -->
+              <div class="col-md-6">
+                <img class="img-fluid pad" src="dist/img/demo/beta-diversity-pca_b-asv.png" alt="Photo">
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+          </div>
+        </div>
+        <!-- /.card -->
+
+        <!-- GRAPH EXAMPLE 2 COLUMN / ROW -->
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title">Firmicute</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img class="img-fluid pad" src="dist/img/demo/firmicute-bacteriodtes_ratio-nosig.png" alt="Photo">
+              </div>
+              <!-- /.col -->
+              <div class="col-md-6">
+                <img class="img-fluid pad" src="dist/img/demo/firmicutes-to-bacteroidetes.png" alt="Photo">
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+          </div>
+        </div>
+        <!-- /.card -->
+
+        <!-- GRAPH EXAMPLE 2 COLUMN / ROW -->
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title">Clustering</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img class="img-fluid pad" src="dist/img/demo/clustering-genus.png" alt="Photo">
+              </div>
+              <!-- /.col -->
+              <div class="col-md-6">
+                <img class="img-fluid pad" src="dist/img/demo/clustering-phylum.png" alt="Photo">
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+          </div>
+        </div>
+        <!-- /.card -->
 
       </div><!-- /.container-fluid -->
     </div>
