@@ -28,15 +28,6 @@ rarefaction_curve <- function(physeq, iter = 10, from = 3000, to = 9000) {
     unnest(final)
 }
 
-aindex_labeler <- labeller(
-  aindex = c(
-    Chao1 = "Chao1",
-    Shannon = "Shannon's index",
-    Simpson = "Simpson's index"
-  )
-)
-
-my_comparisons <- list(c("AD", "Control"))
 
 adiv_ps <- tibble(
   ps = list(ps.filt)
@@ -58,6 +49,16 @@ adiv_ps <- tibble(
     )
   )
 
+#' Precompute alpha diversity
+#' The output alpha is consists of alpha at various
+precompute_alpha <- function(ps){
+
+}
+
+write_alpha <- function(){
+
+}
+
 # Plot
 # x = date_time or group_name
 # plot_a <- adiv_ps$alpha_div[[3]] %>%
@@ -78,6 +79,15 @@ adiv_ps <- tibble(
 #   geom_smooth(method = "lm", se = FALSE) +
 #   facet_wrap(~aindex, scales = "free_y")
 
+
+
+aindex_labeler <- labeller(
+  aindex = c(
+    Chao1 = "Chao1",
+    Shannon = "Shannon's index",
+    Simpson = "Simpson's index"
+  )
+)
 
 # Example function for plotting
 #' Args
