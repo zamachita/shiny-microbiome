@@ -1,0 +1,203 @@
+Apr-11 12:10:17.666 [main] DEBUG nextflow.cli.Launcher - $> nextflow ../minbreeze-flash/main.nf -c proj_spec.conf -profile conda,pbspro -w work_temp -resume -with-dag nflog/flowchart.png -with-timeline nflog/timeline.html -with-report nflog/report.html
+Apr-11 12:10:17.718 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 21.07.0-edge
+Apr-11 12:10:17.730 [main] INFO  nextflow.cli.CmdRun - Launching `../minbreeze-flash/main.nf` [big_leavitt] - revision: 0dd31db64b
+Apr-11 12:10:17.746 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /share/data/home/yumyai/works/WORKFLOW/minbreeze-flash/nextflow.config
+Apr-11 12:10:17.748 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/proj_spec.conf
+Apr-11 12:10:17.748 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /share/data/home/yumyai/works/WORKFLOW/minbreeze-flash/nextflow.config
+Apr-11 12:10:17.748 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/proj_spec.conf
+Apr-11 12:10:17.772 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `conda,pbspro`
+Apr-11 12:10:18.405 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `conda,pbspro`
+Apr-11 12:10:18.480 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [standard, test, pbspro, conda, singularity]
+Apr-11 12:10:18.526 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/share/data/home/yumyai/.nextflow/plugins
+Apr-11 12:10:18.534 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Apr-11 12:10:18.535 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins local root: .nextflow/plr/empty
+Apr-11 12:10:18.559 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-11 12:10:18.560 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-11 12:10:18.574 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-11 12:10:18.579 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Apr-11 12:10:18.766 [main] DEBUG nextflow.Session - Session uuid: 0df65b53-99b2-4149-a054-2b04496c31e7
+Apr-11 12:10:18.766 [main] DEBUG nextflow.Session - Run name: big_leavitt
+Apr-11 12:10:18.767 [main] DEBUG nextflow.Session - Executor pool size: 6
+Apr-11 12:10:18.797 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 21.07.0-edge build 5583
+  Created: 06-08-2021 11:06 UTC (18:06 ICST)
+  System: Linux 4.18.0-240.10.1.el8_3.x86_64
+  Runtime: Groovy 3.0.8 on OpenJDK 64-Bit Server VM 15.0.2+7
+  Encoding: UTF-8 (UTF-8)
+  Process: 3208645@master [10.3.137.6]
+  CPUs: 6 - Mem: 6 GB (4.1 GB) - Swap: 0 (0)
+Apr-11 12:10:18.818 [main] DEBUG nextflow.Session - Work-dir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp [nfs]
+Apr-11 12:10:18.881 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Apr-11 12:10:18.898 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Apr-11 12:10:18.983 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 7; maxThreads: 1000
+Apr-11 12:10:19.527 [main] DEBUG nextflow.Session - Session start invoked
+Apr-11 12:10:19.861 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Apr-11 12:10:19.869 [main] INFO  nextflow.Nextflow - 
+=================================
+NXF-minbreeze
+=================================
+
+Parameters:
+-------------------------------------------
+--input        : samples.csv
+--minOverlap      : 12
+--trimfront1      : 28
+--trimfront2      : 29
+--trimtail1       : 0
+--trimtail2       : 0
+--modeltax        : s3://qiime2-data/2021.8/common/silva-138-99-nb-classifier.qza
+--modeltree       : s3://qiime2-data/2021.8/common/sepp-refs-silva-128.qza
+
+Runtime data:
+-------------------------------------------
+Running with profile:   [1;32mconda,pbspro[0m
+Container:              [1;32m[:][0m
+Running as user:        [1;32myumyai[0m
+Launch dir:             [1;32m/share/data/home/yumyai/works/WORKFLOW/minbreeze-run[0m
+Base dir:               [1;32m/share/data/home/yumyai/works/WORKFLOW/minbreeze-flash[0m
+
+Apr-11 12:10:20.311 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: export_dada2tsv, qiime2_roottree, qiime2_roottree_mafft, qiime2_bayes, dada2, classifier, qiime2_blast, fastp, flash
+Apr-11 12:10:20.384 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 7; maxThreads: 1000
+Apr-11 12:10:20.472 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: pbspro
+Apr-11 12:10:20.472 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'pbspro'
+Apr-11 12:10:20.489 [main] DEBUG nextflow.executor.Executor - [warm up] executor > pbspro
+Apr-11 12:10:20.492 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'pbspro' > capacity: 100; pollInterval: 5s; dumpInterval: 5m 
+Apr-11 12:10:20.494 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'pbspro' > queue-stat-interval: 1m
+Apr-11 12:10:20.526 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: pbspro
+Apr-11 12:10:20.526 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'pbspro'
+Apr-11 12:10:20.531 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:dada2` matches process dada2
+Apr-11 12:10:20.532 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: pbspro
+Apr-11 12:10:20.532 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'pbspro'
+Apr-11 12:10:20.535 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: pbspro
+Apr-11 12:10:20.535 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'pbspro'
+Apr-11 12:10:20.537 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:med_cpu` matches labels `med_cpu,qiime2` for process with name qiime2_roottree_mafft
+Apr-11 12:10:20.537 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:qiime2` matches labels `med_cpu,qiime2` for process with name qiime2_roottree_mafft
+Apr-11 12:10:20.537 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: pbspro
+Apr-11 12:10:20.537 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'pbspro'
+Apr-11 12:10:20.539 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:big_mem` matches labels `big_mem,qiime2` for process with name classifier
+Apr-11 12:10:20.539 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:qiime2` matches labels `big_mem,qiime2` for process with name classifier
+Apr-11 12:10:20.539 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: pbspro
+Apr-11 12:10:20.539 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'pbspro'
+Apr-11 12:10:20.541 [main] DEBUG nextflow.Session - Ignite dataflow network (7)
+Apr-11 12:10:20.541 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > fastp
+Apr-11 12:10:20.541 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > flash
+Apr-11 12:10:20.541 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > dada2
+Apr-11 12:10:20.541 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > export_dada2tsv
+Apr-11 12:10:20.541 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > qiime2_roottree_mafft
+Apr-11 12:10:20.541 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > classifier
+Apr-11 12:10:20.542 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Apr-11 12:10:20.542 [main] DEBUG nextflow.Session - Session await
+Apr-11 12:10:20.725 [Actor Thread 9] DEBUG nextflow.conda.CondaCache - conda found local env for environment=/share/data/home/yumyai/works/WORKFLOW/minbreeze-flash/envs/minflow.yaml; path=/share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/conda/minflow-0.2-4e9a7a367cf8d59b5f67e709263c6813
+Apr-11 12:10:20.790 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [PBSPRO] submitted process fastp (3) > jobId: 31243.master; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/be/3c3fb77b7f1ad59c99d90960d180ad
+Apr-11 12:10:20.791 [Task submitter] INFO  nextflow.Session - [be/3c3fb7] Submitted process > fastp (3)
+Apr-11 12:10:20.818 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [PBSPRO] submitted process fastp (4) > jobId: 31244.master; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/45/4e96e6bbeb200e0837448f47c7e1a5
+Apr-11 12:10:20.818 [Task submitter] INFO  nextflow.Session - [45/4e96e6] Submitted process > fastp (4)
+Apr-11 12:10:20.842 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [PBSPRO] submitted process fastp (6) > jobId: 31245.master; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/5e/31eb01916c28dc6b5bfd3f189488f6
+Apr-11 12:10:20.843 [Task submitter] INFO  nextflow.Session - [5e/31eb01] Submitted process > fastp (6)
+Apr-11 12:10:20.868 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [PBSPRO] submitted process fastp (2) > jobId: 31246.master; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/1c/37cbd408d5085aa3890abed9594d22
+Apr-11 12:10:20.868 [Task submitter] INFO  nextflow.Session - [1c/37cbd4] Submitted process > fastp (2)
+Apr-11 12:10:20.922 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [PBSPRO] submitted process fastp (5) > jobId: 31247.master; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/aa/698dadc4bacd143d17b85e10ba723d
+Apr-11 12:10:20.923 [Task submitter] INFO  nextflow.Session - [aa/698dad] Submitted process > fastp (5)
+Apr-11 12:10:20.947 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [PBSPRO] submitted process fastp (1) > jobId: 31248.master; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/ad/285f98a8ef6967936b7b21f1dea308
+Apr-11 12:10:20.947 [Task submitter] INFO  nextflow.Session - [ad/285f98] Submitted process > fastp (1)
+Apr-11 12:10:20.990 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [PBSPRO] submitted process fastp (7) > jobId: 31249.master; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/43/7c4176e59c596ad68c7111412f43a4
+Apr-11 12:10:20.990 [Task submitter] INFO  nextflow.Session - [43/7c4176] Submitted process > fastp (7)
+Apr-11 12:10:21.029 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [PBSPRO] submitted process fastp (8) > jobId: 31250.master; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/78/17f32a6542860100d6b99b5dc38597
+Apr-11 12:10:21.029 [Task submitter] INFO  nextflow.Session - [78/17f32a] Submitted process > fastp (8)
+Apr-11 12:10:40.517 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 31243.master; id: 3; name: fastp (3); status: COMPLETED; exit: 0; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/be/3c3fb77b7f1ad59c99d90960d180ad started: 1649653825515; exited: 2022-04-11T05:10:35.824214563Z; ]
+Apr-11 12:10:40.558 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [PBSPRO] submitted process flash (1) > jobId: 31251.master; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/c3/431c445d2f191566b6afba68073fea
+Apr-11 12:10:40.558 [Task submitter] INFO  nextflow.Session - [c3/431c44] Submitted process > flash (1)
+Apr-11 12:10:41.621 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 31244.master; id: 1; name: fastp (4); status: COMPLETED; exit: 0; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/45/4e96e6bbeb200e0837448f47c7e1a5 started: 1649653825747; exited: 2022-04-11T05:10:35.735215258Z; ]
+Apr-11 12:10:41.652 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [PBSPRO] submitted process flash (2) > jobId: 31252.master; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/36/f1f589da9f3b9b962df17796cee2be
+Apr-11 12:10:41.653 [Task submitter] INFO  nextflow.Session - [36/f1f589] Submitted process > flash (2)
+Apr-11 12:10:41.688 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 31245.master; id: 6; name: fastp (6); status: COMPLETED; exit: 0; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/5e/31eb01916c28dc6b5bfd3f189488f6 started: 1649653825749; exited: 2022-04-11T05:10:35.804214719Z; ]
+Apr-11 12:10:41.709 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 31246.master; id: 4; name: fastp (2); status: COMPLETED; exit: 0; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/1c/37cbd408d5085aa3890abed9594d22 started: 1649653825751; exited: 2022-04-11T05:10:35.772214969Z; ]
+Apr-11 12:10:41.721 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [PBSPRO] submitted process flash (3) > jobId: 31253.master; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/f7/8f9b4b77d91594c215a8aac567e3e4
+Apr-11 12:10:41.721 [Task submitter] INFO  nextflow.Session - [f7/8f9b4b] Submitted process > flash (3)
+Apr-11 12:10:41.721 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 31247.master; id: 5; name: fastp (5); status: COMPLETED; exit: 0; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/aa/698dadc4bacd143d17b85e10ba723d started: 1649653825752; exited: 2022-04-11T05:10:35.761215055Z; ]
+Apr-11 12:10:41.730 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 31248.master; id: 2; name: fastp (1); status: COMPLETED; exit: 0; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/ad/285f98a8ef6967936b7b21f1dea308 started: 1649653825754; exited: 2022-04-11T05:10:35.797214774Z; ]
+Apr-11 12:10:41.746 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [PBSPRO] submitted process flash (4) > jobId: 31254.master; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/8d/50fc74d5ae81af7a0754ce2cabf37e
+Apr-11 12:10:41.746 [Task submitter] INFO  nextflow.Session - [8d/50fc74] Submitted process > flash (4)
+Apr-11 12:10:41.768 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [PBSPRO] submitted process flash (5) > jobId: 31255.master; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/7a/1b102492d6b3be6387801af25c5b05
+Apr-11 12:10:41.768 [Task submitter] INFO  nextflow.Session - [7a/1b1024] Submitted process > flash (5)
+Apr-11 12:10:41.778 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 31249.master; id: 7; name: fastp (7); status: COMPLETED; exit: 0; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/43/7c4176e59c596ad68c7111412f43a4 started: 1649653825756; exited: 2022-04-11T05:10:35.697215555Z; ]
+Apr-11 12:10:41.798 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [PBSPRO] submitted process flash (6) > jobId: 31256.master; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/c0/4a071e884fafa0cd58210d004e9b48
+Apr-11 12:10:41.798 [Task submitter] INFO  nextflow.Session - [c0/4a071e] Submitted process > flash (6)
+Apr-11 12:10:41.822 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [PBSPRO] submitted process flash (7) > jobId: 31257.master; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/81/d59cc2ffe43b533707ec1e6fad45ed
+Apr-11 12:10:41.822 [Task submitter] INFO  nextflow.Session - [81/d59cc2] Submitted process > flash (7)
+Apr-11 12:10:41.827 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 31250.master; id: 8; name: fastp (8); status: COMPLETED; exit: 0; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/78/17f32a6542860100d6b99b5dc38597 started: 1649653825757; exited: 2022-04-11T05:10:35.828214532Z; ]
+Apr-11 12:10:41.860 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [PBSPRO] submitted process flash (8) > jobId: 31258.master; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/bc/4fa68ff239a99e9c75168ad619da3c
+Apr-11 12:10:41.860 [Task submitter] INFO  nextflow.Session - [bc/4fa68f] Submitted process > flash (8)
+Apr-11 12:10:45.518 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 31251.master; id: 9; name: flash (1); status: COMPLETED; exit: 0; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/c3/431c445d2f191566b6afba68073fea started: 1649653845516; exited: 2022-04-11T05:10:44.761144774Z; ]
+Apr-11 12:10:45.563 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 31252.master; id: 10; name: flash (2); status: COMPLETED; exit: 0; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/36/f1f589da9f3b9b962df17796cee2be started: 1649653845561; exited: 2022-04-11T05:10:44.753144837Z; ]
+Apr-11 12:10:45.572 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 31253.master; id: 11; name: flash (3); status: COMPLETED; exit: 0; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/f7/8f9b4b77d91594c215a8aac567e3e4 started: 1649653845569; exited: 2022-04-11T05:10:44.994142955Z; ]
+Apr-11 12:10:45.595 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 31254.master; id: 12; name: flash (4); status: COMPLETED; exit: 0; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/8d/50fc74d5ae81af7a0754ce2cabf37e started: 1649653845593; exited: 2022-04-11T05:10:44.765144743Z; ]
+Apr-11 12:10:45.604 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 31255.master; id: 13; name: flash (5); status: COMPLETED; exit: 0; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/7a/1b102492d6b3be6387801af25c5b05 started: 1649653845602; exited: 2022-04-11T05:10:44.830144235Z; ]
+Apr-11 12:10:45.614 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 31256.master; id: 14; name: flash (6); status: COMPLETED; exit: 0; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/c0/4a071e884fafa0cd58210d004e9b48 started: 1649653845612; exited: 2022-04-11T05:10:44.825144275Z; ]
+Apr-11 12:10:45.624 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 31257.master; id: 15; name: flash (7); status: COMPLETED; exit: 0; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/81/d59cc2ffe43b533707ec1e6fad45ed started: 1649653845622; exited: 2022-04-11T05:10:44.827144259Z; ]
+Apr-11 12:10:45.635 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 31258.master; id: 16; name: flash (8); status: COMPLETED; exit: 0; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/bc/4fa68ff239a99e9c75168ad619da3c started: 1649653845632; exited: 2022-04-11T05:10:44.944143345Z; ]
+Apr-11 12:10:45.666 [Actor Thread 4] DEBUG nextflow.conda.CondaCache - conda found local env for environment=/share/data/home/yumyai/works/WORKFLOW/minbreeze-flash/envs/dada2.yaml; path=/share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/conda/dada2-f8af51024aa4f80b20a255607c5b9ecf
+Apr-11 12:10:45.698 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [PBSPRO] submitted process dada2 > jobId: 31259.master; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/c7/7ea14c12a8f7a579bcd2e7209cc643
+Apr-11 12:10:45.698 [Task submitter] INFO  nextflow.Session - [c7/7ea14c] Submitted process > dada2
+Apr-11 12:15:10.525 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 31259.master; id: 17; name: dada2; status: COMPLETED; exit: 0; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/c7/7ea14c12a8f7a579bcd2e7209cc643 started: 1649653850518; exited: 2022-04-11T05:15:07.139085836Z; ]
+Apr-11 12:15:10.529 [Task monitor] DEBUG n.util.BlockingThreadExecutorFactory - Thread pool name=FileTransfer; maxThreads=18; maxQueueSize=54; keepAlive=1m
+Apr-11 12:15:10.584 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [PBSPRO] submitted process export_dada2tsv > jobId: 31260.master; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/30/e5832e1a6e966d7fd9eaf0c18e4205
+Apr-11 12:15:10.584 [Task submitter] INFO  nextflow.Session - [30/e5832e] Submitted process > export_dada2tsv
+Apr-11 12:15:25.525 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor pbspro > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[jobId: 31260.master; id: 18; name: export_dada2tsv; status: RUNNING; exit: -; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/30/e5832e1a6e966d7fd9eaf0c18e4205 started: 1649654115524; exited: 2022-04-11T05:15:23.955954731Z; ]
+Apr-11 12:15:25.526 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 31260.master; id: 18; name: export_dada2tsv; status: COMPLETED; exit: 0; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/30/e5832e1a6e966d7fd9eaf0c18e4205 started: 1649654115524; exited: 2022-04-11T05:15:23.955954731Z; ]
+Apr-11 12:15:25.529 [Actor Thread 6] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-amazon version: 1.2.0
+Apr-11 12:15:25.563 [Actor Thread 10] INFO  nextflow.conda.CondaCache - Creating env using conda: /share/data/home/yumyai/works/WORKFLOW/minbreeze-flash/envs/qiime2-2021.8-py38-linux-conda.yml [cache /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/conda/qiime2-2021.8-py38-linux-conda-073acd1abf22baeed8e9789180b8eebe]
+Apr-11 12:15:25.632 [Actor Thread 6] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-amazon@1.2.0' resolved
+Apr-11 12:15:25.632 [Actor Thread 6] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-amazon@1.2.0'
+Apr-11 12:15:25.972 [Actor Thread 6] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-amazon@1.2.0
+Apr-11 12:15:25.986 [Actor Thread 6] DEBUG nextflow.file.FileHelper - > Added 'S3FileSystemProvider' to list of installed providers [s3]
+Apr-11 12:15:25.986 [Actor Thread 6] DEBUG nextflow.file.FileHelper - Started plugin 'nf-amazon' required to handle file: s3://qiime2-data/2021.8/common/silva-138-99-nb-classifier.qza
+Apr-11 12:15:26.048 [Actor Thread 6] DEBUG nextflow.file.FileHelper - Creating a file system instance for provider: S3FileSystemProvider
+Apr-11 12:15:26.065 [Actor Thread 6] DEBUG nextflow.file.FileHelper - AWS S3 config details: {max_error_retry=5}
+Apr-11 12:15:38.469 [FileTransfer-thread-11] DEBUG nextflow.file.FilePorter - Copying foreign file s3://qiime2-data/2021.8/common/silva-138-99-nb-classifier.qza to work dir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/stage/39/732da7aca25351d12b1b5b2d6b6e10/silva-138-99-nb-classifier.qza
+Apr-11 12:15:40.469 [Actor Thread 6] INFO  nextflow.file.FilePorter - Staging foreign file: s3://qiime2-data/2021.8/common/silva-138-99-nb-classifier.qza
+Apr-11 12:20:25.589 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] qiime2_roottree_mafft
+  status=ACTIVE
+  port 0: (value) bound ; channel: repsep_fasta
+  port 1: (cntrl) -     ; channel: $
+
+[process] classifier
+  status=ACTIVE
+  port 0: (value) bound ; channel: repsep_fasta
+  port 1: (value) bound ; channel: model
+  port 2: (cntrl) -     ; channel: $
+
+Apr-11 12:25:25.598 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] qiime2_roottree_mafft
+  status=ACTIVE
+  port 0: (value) bound ; channel: repsep_fasta
+  port 1: (cntrl) -     ; channel: $
+
+[process] classifier
+  status=ACTIVE
+  port 0: (value) bound ; channel: repsep_fasta
+  port 1: (value) bound ; channel: model
+  port 2: (cntrl) -     ; channel: $
+
+Apr-11 12:25:52.495 [Actor Thread 10] DEBUG nextflow.conda.CondaCache - 'conda' create complete env=/share/data/home/yumyai/works/WORKFLOW/minbreeze-flash/envs/qiime2-2021.8-py38-linux-conda.yml path=/share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/conda/qiime2-2021.8-py38-linux-conda-073acd1abf22baeed8e9789180b8eebe
+Apr-11 12:25:52.743 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [PBSPRO] submitted process qiime2_roottree_mafft > jobId: 31261.master; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/1a/b27fb0a6db92530d5e6870a22abb63
+Apr-11 12:25:52.743 [Task submitter] INFO  nextflow.Session - [1a/b27fb0] Submitted process > qiime2_roottree_mafft
+Apr-11 12:25:52.767 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [PBSPRO] submitted process classifier > jobId: 31262.master; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/f9/c804bf658ca0912cebb38d693b3005
+Apr-11 12:25:52.767 [Task submitter] INFO  nextflow.Session - [f9/c804bf] Submitted process > classifier
+Apr-11 12:26:20.601 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 31261.master; id: 19; name: qiime2_roottree_mafft; status: COMPLETED; exit: 0; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/1a/b27fb0a6db92530d5e6870a22abb63 started: 1649654755599; exited: 2022-04-11T05:26:19.166004139Z; ]
+Apr-11 12:30:25.609 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor pbspro > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[jobId: 31262.master; id: 20; name: classifier; status: RUNNING; exit: -; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/f9/c804bf658ca0912cebb38d693b3005 started: 1649654755824; exited: -; ]
+Apr-11 12:33:05.613 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 31262.master; id: 20; name: classifier; status: COMPLETED; exit: 0; error: -; workDir: /share/data/home/yumyai/works/WORKFLOW/minbreeze-run/work_temp/f9/c804bf658ca0912cebb38d693b3005 started: 1649654755824; exited: 2022-04-11T05:33:01.552245792Z; ]
+Apr-11 12:33:05.615 [main] DEBUG nextflow.Session - Session await > all process finished
+Apr-11 12:33:05.616 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Apr-11 12:33:05.917 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=20; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=5h 24m 21s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=8; peakCpus=50; peakMemory=288 GB; ]
+Apr-11 12:33:05.917 [main] DEBUG nextflow.trace.ReportObserver - Flow completing -- rendering html report
+Apr-11 12:33:06.013 [main] DEBUG nextflow.trace.ReportObserver - Execution report summary data:
+  [{"cpuUsage":{"mean":58.71,"min":55.05,"q1":57.63,"q2":58.35,"q3":60.33,"max":62.15,"minLabel":"fastp (3)","maxLabel":"fastp (7)","q1Label":"fastp (8)","q2Label":"fastp (6)","q3Label":"fastp (4)"},"process":"fastp","mem":{"mean":3389440,"min":3313664,"q1":3352576,"q2":3379200,"q3":3410944,"max":3497984,"minLabel":"fastp (2)","maxLabel":"fastp (1)","q1Label":"fastp (6)","q2Label":"fastp (7)","q3Label":"fastp (8)"},"memUsage":null,"timeUsage":null,"vmem":{"mean":227987456,"min":227987456,"q1":227987456,"q2":227987456,"q3":227987456,"max":227987456,"minLabel":"fastp (3)","maxLabel":"fastp (8)","q1Label":"fastp (4)","q2Label":"fastp (2)","q3Label":"fastp (1)"},"reads":{"mean":3836435,"min":3319437,"q1":3426859.5,"q2":4034652.5,"q3":4138878.5,"max":4174388,"minLabel":"fastp (4)","maxLabel":"fastp (7)","q1Label":"fastp (3)","q2Label":"fastp (1)","q3Label":"fastp (5)"},"cpu":{"mean":117.43,"min":110.1,"q1":115.25,"q2":116.7,"q3":120.65,"max":124.3,"minLabel":"fastp (3)","maxLabel":"fastp (7)","q1Label":"fastp (8)","q2Label":"fastp (6)","q3Label":"fastp (4)"},"time":{"mean":929.13,"min":845,"q1":900.5,"q2":942,"q3":963,"max":984,"minLabel":"fastp (7)","maxLabel":"fastp (3)","q1Label":"fastp (4)","q2Label":"fastp (2)","q3Label":"fastp (6)"},"writes":{"mean":3725462.63,"min":3518001,"q1":3554516.5,"q2":3780902.5,"q3":3844266.75,"max":3900450,"minLabel":"fastp (3)","maxLabel":"fastp (8)","q1Label":"fastp (2)","q2Label":"fastp (6)","q3Label":"fastp (5)"}},{"cpuUsage":{"mean":56.33,"min":36.85,"q1":49.11,"q2":56.58,"q3":64.58,"max":72.05,"minLabel":"flash (1)","maxLabel":"flash (8)","q1Label":"flash (2)","q2Label":"flash (5)","q3Label":"flash (7)"},"process":"flash","mem":{"mean":5586944,"min":4382720,"q1":4590592,"q2":4634624,"q3":5690368,"max":8605696,"minLabel":"flash (2)","maxLabel":"flash (3)","q1Label":"flash (4)","q2Label":"flash (7)","q3Label":"flash (6)"},"memUsage":null,"timeUsage":null,"vmem":{"mean":710099968,"min":678268928,"q1":678268928,"q2":678268928,"q3":710099968,"max":805593088,"minLabel":"flash (1)","maxLabel":"flash (8)","q1Label":"flash (2)","q2Label":"flash (5)","q3Label":"flash (7)"},"reads":{"mean":3173742.13,"min":2967584,"q1":3001475,"q2":3230557,"q3":3292868.5,"max":3346715,"minLabel":"flash (1)","maxLabel":"flash (8)","q1Label":"flash (4)","q2Label":"flash (3)","q3Label":"flash (5)"},"cpu":{"mean":112.65,"min":73.7,"q1":98.23,"q2":113.15,"q3":129.15,"max":144.1,"minLabel":"flash (1)","maxLabel":"flash (8)","q1Label":"flash (2)","q2Label":"flash (5)","q3Label":"flash (7)"},"time":{"mean":716.13,"min":551,"q1":624.5,"q2":712,"q3":762,"max":988,"minLabel":"flash (8)","maxLabel":"flash (1)","q1Label":"flash (3)","q2Label":"flash (6)","q3Label":"flash (5)"},"writes":{"mean":1411767.88,"min":1242926,"q1":1285132.5,"q2":1490626.5,"q3":1495101.25,"max":1514433,"minLabel":"flash (2)","maxLabel":"flash (5)","q1Label":"flash (1)","q2Label":"flash (6)","q3Label":"flash (3)"}},{"cpuUsage":{"mean":14.88,"min":14.88,"q1":14.88,"q2":14.88,"q3":14.88,"max":14.88,"minLabel":"dada2","maxLabel":"dada2","q1Label":"dada2","q2Label":"dada2","q3Label":"dada2"},"process":"dada2","mem":{"mean":6107275264,"min":6107275264,"q1":6107275264,"q2":6107275264,"q3":6107275264,"max":6107275264,"minLabel":"dada2","maxLabel":"dada2","q1Label":"dada2","q2Label":"dada2","q3Label":"dada2"},"memUsage":{"mean":8.89,"min":8.89,"q1":8.89,"q2":8.89,"q3":8.89,"max":8.89,"minLabel":"dada2","maxLabel":"dada2","q1Label":"dada2","q2Label":"dada2","q3Label":"dada2"},"timeUsage":{"mean":0.29,"min":0.29,"q1":0.29,"q2":0.29,"q3":0.29,"max":0.29,"minLabel":"dada2","maxLabel":"dada2","q1Label":"dada2","q2Label":"dada2","q3Label":"dada2"},"vmem":{"mean":58093494272,"min":58093494272,"q1":58093494272,"q2":58093494272,"q3":58093494272,"max":58093494272,"minLabel":"dada2","maxLabel":"dada2","q1Label":"dada2","q2Label":"dada2","q3Label":"dada2"},"reads":{"mean":79860167,"min":79860167,"q1":79860167,"q2":79860167,"q3":79860167,"max":79860167,"minLabel":"dada2","maxLabel":"dada2","q1Label":"dada2","q2Label":"dada2","q3Label":"dada2"},"cpu":{"mean":595.3,"min":595.3,"q1":595.3,"q2":595.3,"q3":595.3,"max":595.3,"minLabel":"dada2","maxLabel":"dada2","q1Label":"dada2","q2Label":"dada2","q3Label":"dada2"},"time":{"mean":254631,"min":254631,"q1":254631,"q2":254631,"q3":254631,"max":254631,"minLabel":"dada2","maxLabel":"dada2","q1Label":"dada2","q2Label":"dada2","q3Label":"dada2"},"writes":{"mean":10278079,"min":10278079,"q1":10278079,"q2":10278079,"q3":10278079,"max":10278079,"minLabel":"dada2","maxLabel":"dada2","q1Label":"dada2","q2Label":"dada2","q3Label":"dada2"}},{"cpuUsage":{"mean":2.75,"min":2.75,"q1":2.75,"q2":2.75,"q3":2.75,"max":2.75,"minLabel":"export_dada2tsv","maxLabel":"export_dada2tsv","q1Label":"export_dada2tsv","q2Label":"export_dada2tsv","q3Label":"export_dada2tsv"},"process":"export_dada2tsv","mem":{"mean":59482112,"min":59482112,"q1":59482112,"q2":59482112,"q3":59482112,"max":59482112,"minLabel":"export_dada2tsv","maxLabel":"export_dada2tsv","q1Label":"export_dada2tsv","q2Label":"export_dada2tsv","q3Label":"export_dada2tsv"},"memUsage":null,"timeUsage":null,"vmem":{"mean":704749568,"min":704749568,"q1":704749568,"q2":704749568,"q3":704749568,"max":704749568,"minLabel":"export_dada2tsv","maxLabel":"export_dada2tsv","q1Label":"export_dada2tsv","q2Label":"export_dada2tsv","q3Label":"export_dada2tsv"},"reads":{"mean":8769471,"min":8769471,"q1":8769471,"q2":8769471,"q3":8769471,"max":8769471,"minLabel":"export_dada2tsv","maxLabel":"export_dada2tsv","q1Label":"export_dada2tsv","q2Label":"export_dada2tsv","q3Label":"export_dada2tsv"},"cpu":{"mean":5.5,"min":5.5,"q1":5.5,"q2":5.5,"q3":5.5,"max":5.5,"minLabel":"export_dada2tsv","maxLabel":"export_dada2tsv","q1Label":"export_dada2tsv","q2Label":"export_dada2tsv","q3Label":"export_dada2tsv"},"time":{"mean":10221,"min":10221,"q1":10221,"q2":10221,"q3":10221,"max":10221,"minLabel":"export_dada2tsv","maxLabel":"export_dada2tsv","q1Label":"export_dada2tsv","q2Label":"export_dada2tsv","q3Label":"export_dada2tsv"},"writes":{"mean":358045,"min":358045,"q1":358045,"q2":358045,"q3":358045,"max":358045,"minLabel":"export_dada2tsv","maxLabel":"export_dada2tsv","q1Label":"export_dada2tsv","q2Label":"export_dada2tsv","q3Label":"export_dada2tsv"}},{"cpuUsage":{"mean":3.08,"min":3.08,"q1":3.08,"q2":3.08,"q3":3.08,"max":3.08,"minLabel":"qiime2_roottree_mafft","maxLabel":"qiime2_roottree_mafft","q1Label":"qiime2_roottree_mafft","q2Label":"qiime2_roottree_mafft","q3Label":"qiime2_roottree_mafft"},"process":"qiime2_roottree_mafft","mem":{"mean":266874880,"min":266874880,"q1":266874880,"q2":266874880,"q3":266874880,"max":266874880,"minLabel":"qiime2_roottree_mafft","maxLabel":"qiime2_roottree_mafft","q1Label":"qiime2_roottree_mafft","q2Label":"qiime2_roottree_mafft","q3Label":"qiime2_roottree_mafft"},"memUsage":{"mean":0.78,"min":0.78,"q1":0.78,"q2":0.78,"q3":0.78,"max":0.78,"minLabel":"qiime2_roottree_mafft","maxLabel":"qiime2_roottree_mafft","q1Label":"qiime2_roottree_mafft","q2Label":"qiime2_roottree_mafft","q3Label":"qiime2_roottree_mafft"},"timeUsage":null,"vmem":{"mean":5201035264,"min":5201035264,"q1":5201035264,"q2":5201035264,"q3":5201035264,"max":5201035264,"minLabel":"qiime2_roottree_mafft","maxLabel":"qiime2_roottree_mafft","q1Label":"qiime2_roottree_mafft","q2Label":"qiime2_roottree_mafft","q3Label":"qiime2_roottree_mafft"},"reads":{"mean":138940541,"min":138940541,"q1":138940541,"q2":138940541,"q3":138940541,"max":138940541,"minLabel":"qiime2_roottree_mafft","maxLabel":"qiime2_roottree_mafft","q1Label":"qiime2_roottree_mafft","q2Label":"qiime2_roottree_mafft","q3Label":"qiime2_roottree_mafft"},"cpu":{"mean":92.5,"min":92.5,"q1":92.5,"q2":92.5,"q3":92.5,"max":92.5,"minLabel":"qiime2_roottree_mafft","maxLabel":"qiime2_roottree_mafft","q1Label":"qiime2_roottree_mafft","q2Label":"qiime2_roottree_mafft","q3Label":"qiime2_roottree_mafft"},"time":{"mean":23642,"min":23642,"q1":23642,"q2":23642,"q3":23642,"max":23642,"minLabel":"qiime2_roottree_mafft","maxLabel":"qiime2_roottree_mafft","q1Label":"qiime2_roottree_mafft","q2Label":"qiime2_roottree_mafft","q3Label":"qiime2_roottree_mafft"},"writes":{"mean":4988546,"min":4988546,"q1":4988546,"q2":4988546,"q3":4988546,"max":4988546,"minLabel":"qiime2_roottree_mafft","maxLabel":"qiime2_roottree_mafft","q1Label":"qiime2_roottree_mafft","q2Label":"qiime2_roottree_mafft","q3Label":"qiime2_roottree_mafft"}},{"cpuUsage":{"mean":17.13,"min":17.13,"q1":17.13,"q2":17.13,"q3":17.13,"max":17.13,"minLabel":"classifier","maxLabel":"classifier","q1Label":"classifier","q2Label":"classifier","q3Label":"classifier"},"process":"classifier","mem":{"mean":211960418304,"min":211960418304,"q1":211960418304,"q2":211960418304,"q3":211960418304,"max":211960418304,"minLabel":"classifier","maxLabel":"classifier","q1Label":"classifier","q2Label":"classifier","q3Label":"classifier"},"memUsage":{"mean":77.11,"min":77.11,"q1":77.11,"q2":77.11,"q3":77.11,"max":77.11,"minLabel":"classifier","maxLabel":"classifier","q1Label":"classifier","q2Label":"classifier","q3Label":"classifier"},"timeUsage":null,"vmem":{"mean":336153042944,"min":336153042944,"q1":336153042944,"q2":336153042944,"q3":336153042944,"max":336153042944,"minLabel":"classifier","maxLabel":"classifier","q1Label":"classifier","q2Label":"classifier","q3Label":"classifier"},"reads":{"mean":20688582162,"min":20688582162,"q1":20688582162,"q2":20688582162,"q3":20688582162,"max":20688582162,"minLabel":"classifier","maxLabel":"classifier","q1Label":"classifier","q2Label":"classifier","q3Label":"classifier"},"cpu":{"mean":342.5,"min":342.5,"q1":342.5,"q2":342.5,"q3":342.5,"max":342.5,"minLabel":"classifier","maxLabel":"classifier","q1Label":"classifier","q2Label":"classifier","q3Label":"classifier"},"time":{"mean":425992,"min":425992,"q1":425992,"q2":425992,"q3":425992,"max":425992,"minLabel":"classifier","maxLabel":"classifier","q1Label":"classifier","q2Label":"classifier","q3Label":"classifier"},"writes":{"mean":29256981137,"min":29256981137,"q1":29256981137,"q2":29256981137,"q3":29256981137,"max":29256981137,"minLabel":"classifier","maxLabel":"classifier","q1Label":"classifier","q2Label":"classifier","q3Label":"classifier"}}]
+Apr-11 12:33:06.583 [main] DEBUG nextflow.trace.TimelineObserver - Flow completing -- rendering html timeline
+Apr-11 12:33:06.968 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Apr-11 12:33:06.968 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-amazon@1.2.0'
+Apr-11 12:33:06.968 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-amazon
+Apr-11 12:33:07.030 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
