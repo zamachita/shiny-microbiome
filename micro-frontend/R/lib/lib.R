@@ -1,38 +1,59 @@
+#' All common function
+
+
 library(tidyverse)
 library(phyloseq)
 
-# Metadata can be
+# Load data
 ReadQiime2 <- function(asvtab, taxtab, seqfst, treenwk, metatab){
     require(phyloseq)
     require(Biostrings)
     require(ape)
     asvtab.raw <- read_tsv(asvtab, show_col_types = FALSE)
+    taxtab_raw <- read_tsv(taxtab, show_col_types = FALSE)
+    metatab.raw <- read_tsv(metatab, na=c("", "#N/A"), show_col_types = FALSE)
     pseq.tab <- asvtab.raw %>%
         column_to_rownames(names(asvtab.raw)[1]) %>%
         as.matrix() %>%
         otu_table(taxa_are_rows = TRUE)
-    taxtab_raw <- read_tsv(taxtab, show_col_types = FALSE)
     pseq.tax <- taxtab_raw %>%
         mutate(across(everything(), ~ replace_na(.x, ""))) %>%
         column_to_rownames(names(taxtab_raw)[1]) %>%
         as.matrix() %>%
         tax_table()
-    metatab.raw <- read_tsv(metatab,
-      na=c("", "#N/A"), 
-      show_col_types = FALSE)
-    
     pseq.met <- metatab.raw %>%
       column_to_rownames(names(metatab.raw)[1]) %>%
       sample_data()
-    
+
     pseq.seq <- Biostrings::readDNAStringSet(seqfst)
     pseq.tre <- ape::read.tree(treenwk)
-    
+
     do.call(phyloseq, list(pseq.tab, pseq.tax, pseq.seq, pseq.tre, pseq.met))
-    # phyloseq(pseq.tab, pseq.tax, pseq.seq, pseq.tre, pseq.met)
 }
 
-#' Melt fast, calc fast
+SimpleFilter <- function(.ps) {
+  prev_phylum <- .ps %>% CalcPrev %>% SumPrev(phylum) %>% arrange(maxprev)
+  rmv_phylum <- prev_phylum %>% dplyr::filter(maxprev < 3 & sumabn < 100) %>% pull(phylum)
+
+  .ps.filt <- .ps %>% with_taxa(kingdom == "Bacteria" & phylum != "") %>%
+    with_taxa(! phylum %in% rmv_phylum) %>%
+    prune_taxa(taxa_sums(.) > 10, .)
+
+  return(.ps.filt)
+}
+
+#' Load data from folder, the folder has to have all files list below
+LoadFolder <- function(folder){
+  all_paths <- file.path(
+    folder, c("asv.tab", "taxonomy.tsv", "repsep.fasta", "rooted-tree.nwk", "metadata.tsv")
+  ) %>% unlist %>% as.list
+
+  # Warning if it does not load
+  ps <- do.call(ReadQiime2, all_paths)
+  return(ps)
+}
+
+#' Melt fast
 FastMelt <- function(physeq, includeSampleVars = character()) {
   require("phyloseq")
   require("data.table")
@@ -40,8 +61,6 @@ FastMelt <- function(physeq, includeSampleVars = character()) {
   name.sam <- "ID_sample"
   name.abn <- "abn"
   name.tax <- "TaxaID"
-
-  # Check if data.table has these name.
 
   # supports "naked" otu_table as `physeq` input.
   otutab <- as(otu_table(physeq), "matrix")
@@ -100,7 +119,6 @@ AggregateTaxa.Q <- function(ps, taxa_lvl, verbose = FALSE){
   txt <- rlang::as_label(rlang::enquo(taxa_lvl))
   microbiome::aggregate_taxa(ps, txt, verbose)
 }
-
 
 AggregateTaxa <- function(.ps, rank="ASV"){
   if (rank == "ASV"){
@@ -199,8 +217,6 @@ FiltPrev <- function(ps, taxa_lvl, prev=0.1){
 
   with_taxa(ps, {{taxa_lvl}} %in% name_t)
 }
-
-
 
 # Hierachical clustering all at once
 WideVar <- function(ps, tax_lvl, top_n=50){

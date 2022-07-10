@@ -10,26 +10,7 @@ source("R/lib/lib.R")
 source("R/lib/plot.R")
 source("R/lib/tidy_lib.R")
 
-
-ps <- ReadQiime2(
-    "data/asv.tab", "data/taxonomy.tsv",
-    "data/repsep.fasta", "data/rooted-tree.nwk",
-    "data/metadata.tsv")
-
-
-# Calculate fecal and oral separately
-
-SimpleFilter <- function(.ps) {
-  prev_phylum <- .ps %>% CalcPrev %>% SumPrev(phylum) %>% arrange(maxprev)
-  rmv_phylum <- prev_phylum %>% dplyr::filter(maxprev < 3 & sumabn < 100) %>% pull(phylum)
-  
-  .ps.filt <- .ps %>% with_taxa(kingdom == "Bacteria" & phylum != "") %>%
-    with_taxa(! phylum %in% rmv_phylum) %>%
-    prune_taxa(taxa_sums(.) > 10, .)
-
-  return(.ps.filt)
-}
-
+ps <- LoadFolder("data")
 ps.filt <- SimpleFilter(ps)
 
 dtheme <- theme_minimal() +
