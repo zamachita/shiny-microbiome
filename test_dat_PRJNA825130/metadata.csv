@@ -1,0 +1,9 @@
+sample,group,short_reads_1,short_reads_2,NAME_sample,GROUP_name,DATE_hour
+C001,0,SRR18697055_1.fastq.gz,SRR18697055_2.fastq.gz,A,0
+C002,0,SRR18697066_1.fastq.gz,SRR18697066_2.fastq.gz,A,24
+C003,0,SRR18697067_1.fastq.gz,SRR18697067_2.fastq.gz,A,0
+C004,0,SRR18697068_1.fastq.gz,SRR18697068_2.fastq.gz,A,24
+C005,0,SRR18697073_1.fastq.gz,SRR18697073_2.fastq.gz,B,0
+C006,0,SRR18697074_1.fastq.gz,SRR18697074_2.fastq.gz,B,24
+C007,0,SRR18697075_1.fastq.gz,SRR18697075_2.fastq.gz,B,0
+C008,0,SRR18697076_1.fastq.gz,SRR18697076_2.fastq.gz,B,24
