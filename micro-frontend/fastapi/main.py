@@ -78,11 +78,6 @@ async def uploads(files: List[UploadFile] = File(...)):
 async def main():
     content = """
 <body>
-<form action="/files/" enctype="multipart/form-data" method="post">
-<input name="files" type="file" multiple>
-<input type="submit">
-</form>
-<br>
 Uploads (/uploads)
 <form action="/uploads/" enctype="multipart/form-data" method="post">
 <input name="files" type="file" multiple>
