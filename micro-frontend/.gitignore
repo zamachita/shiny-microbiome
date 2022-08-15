@@ -2,5 +2,5 @@
 .Rhistory
 **/node_modules
 **/build
-micro-frontend/fastapi/upload
+**/fastapi/upload
 **/__pycache__
