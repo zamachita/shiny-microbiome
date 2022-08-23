@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+{% set active_page = "result" %}
+
+{% block title %}Upload{% endblock %}
+
+{% block head %}
+{{ super() }}
+
+
+{% endblock %}
+
+{% block page_content %}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Result</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Project</a></li>
+              <li class="breadcrumb-item active">Result</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container">
+
+        <!-- GRAPH EXAMPLE 2 COLUMN / ROW -->
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title">Alpha Diversity</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img class="img-fluid pad" src="static/images/demo/alpha-diversity_strarified-by-age_nosig.png" alt="Photo">
+              </div>
+              <!-- /.col -->
+              <div class="col-md-6">
+                <img class="img-fluid pad" src="static/images/demo/alpha-diversity_trajectory.png" alt="Photo">
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+          </div>
+        </div>
+        <!-- /.card -->
+
+        <!-- GRAPH EXAMPLE 2 COLUMN / ROW -->
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title">Beta Diversity</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img class="img-fluid pad" src="static/images/demo/beta-diversity_a-family.png" alt="Photo">
+              </div>
+              <!-- /.col -->
+              <div class="col-md-6">
+                <img class="img-fluid pad" src="static/images/demo/beta-diversity_b-asv.png" alt="Photo">
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+          </div>
+        </div>
+        <!-- /.card -->
+
+        <!-- GRAPH EXAMPLE 2 COLUMN / ROW -->
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title">Beta Diversity (PCA)</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img class="img-fluid pad" src="static/images/demo/beta-diversity-pca_a-family.png" alt="Photo">
+              </div>
+              <!-- /.col -->
+              <div class="col-md-6">
+                <img class="img-fluid pad" src="static/images/demo/beta-diversity-pca_b-asv.png" alt="Photo">
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+          </div>
+        </div>
+        <!-- /.card -->
+
+        <!-- GRAPH EXAMPLE 2 COLUMN / ROW -->
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title">Firmicute</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img class="img-fluid pad" src="static/images/demo/firmicute-bacteriodtes_ratio-nosig.png" alt="Photo">
+              </div>
+              <!-- /.col -->
+              <div class="col-md-6">
+                <img class="img-fluid pad" src="static/images/demo/firmicutes-to-bacteroidetes.png" alt="Photo">
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+          </div>
+        </div>
+        <!-- /.card -->
+
+        <!-- GRAPH EXAMPLE 2 COLUMN / ROW -->
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title">Clustering</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img class="img-fluid pad" src="static/images/demo/clustering-genus.png" alt="Photo">
+              </div>
+              <!-- /.col -->
+              <div class="col-md-6">
+                <img class="img-fluid pad" src="static/images/demo/clustering-phylum.png" alt="Photo">
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+          </div>
+        </div>
+        <!-- /.card -->
+
+      </div><!-- /.container -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+<p></p>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{% endblock %}

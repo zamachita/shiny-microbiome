@@ -4,3 +4,4 @@
 **/build
 **/fastapi/upload
 **/__pycache__
+**/static/plugins

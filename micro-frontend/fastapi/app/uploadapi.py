@@ -78,7 +78,12 @@ async def uploads(files: List[UploadFile] = File(...)):
 async def main():
     content = """
 <body>
-Metadata & Fasta.gz Files Upload (/uploads)
+<form action="/files/" enctype="multipart/form-data" method="post">
+<input name="files" type="file" multiple>
+<input type="submit">
+</form>
+<br>
+Uploads (/uploads)
 <form action="/uploads/" enctype="multipart/form-data" method="post">
 <input name="files" type="file" multiple>
 <input type="submit">
