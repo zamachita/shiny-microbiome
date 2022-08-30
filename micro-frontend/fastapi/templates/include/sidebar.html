@@ -26,15 +26,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/document" class="nav-link {{'active' if active_page == 'document' }}">
+            <a href="/tutorial" class="nav-link {{'active' if active_page == 'tutorial' }}">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                Document
+                Tutorial
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="/dataprotection" class="nav-link {{'active' if active_page == 'dataprotection' }}">
+            <a href="/page/dataprotection" class="nav-link {{'active' if request.path == "/page/dataprotection" }}">
               <i class="nav-icon fas fa-lock"></i>
               <p>
                 Data Protection
@@ -61,9 +61,9 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="/input" class="nav-link {{'active' if active_page == 'input' }}">
+            <a href="/project" class="nav-link {{'active' if active_page == 'new' }}">
               <i class="nav-icon fas fa-file"></i>
-              <p>Input</p>
+              <p>New</p>
             </a>
           </li>
           <li class="nav-item">

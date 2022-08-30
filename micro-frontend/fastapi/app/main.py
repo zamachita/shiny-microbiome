@@ -4,7 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 from app.library.helpers import *
-from app.routers import upload, twoforms, unsplash, accordion, result
+from app.routers import upload, twoforms, unsplash, accordion, result, document, project
 
 
 app = FastAPI()
@@ -19,11 +19,13 @@ app.include_router(unsplash.router)
 app.include_router(twoforms.router)
 app.include_router(accordion.router)
 app.include_router(result.router)
+app.include_router(document.router)
+app.include_router(project.router)
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     data = openfile("home.md")
-    return templates.TemplateResponse("page.html", {"request": request, "data": data})
+    return templates.TemplateResponse("home.html", {"request": request, "data": data})
 
 
 @app.get("/page/{page_name}", response_class=HTMLResponse)

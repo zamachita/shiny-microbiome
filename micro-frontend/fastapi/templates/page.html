@@ -1,46 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Welcome{% endblock %}
+{% block title %}FastAPI Starter{% endblock %}
 {% block head %}
 {{ super() }}
-<style>
-    .hero { 
-        position: relative; 
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-image: url('/static/images/background.jpg');
-        background-size: cover;
-        color:black;
-        
-    }
-    
-    .hero::before {
-        content: "";
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        /* background-color: rgba(0,0,0,0.25); */
-        
-    }
 
-    h1 {
-        text-align: center;
-        font-size: 70px;
-        font-weight: 600;
-        line-height: 1.3em;
-        letter-spacing: 0px;
-        /* text-transform: var(--h1TextTransform); */
-    }
-</style>
 {% endblock %}
 
 {% block page_content %}
-<div class="hero">
+{% include 'include/sidebar.html' %}
 <main role="main" class="container">
     <div class="row">
         <div class="col">
@@ -48,8 +15,9 @@
         </div>
     </div>
 </main><!-- /.container -->
+
 {{data.page}}
-</div>
+
 {% endblock %}
 
 {% block scripts %}
