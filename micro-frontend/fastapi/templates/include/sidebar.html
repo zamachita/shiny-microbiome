@@ -1,0 +1,124 @@
+<!-- Sidebar  -->
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link">
+      <img src="{{ url_for('static', path='/images/logo.png') }}" alt=SYSMIOME Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light"><b>SYSMIOME</b></span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-header">
+            MENU:
+          </li>
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            <a href="/" class="nav-link {{'active' if request.path == "/" }}">
+              <i class="nav-icon fas fa-home"></i>
+              <p>
+                Home
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/tutorial" class="nav-link {{'active' if active_page == 'tutorial' }}">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Tutorial
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/page/dataprotection" class="nav-link {{'active' if request.path == "/page/dataprotection" }}">
+              <i class="nav-icon fas fa-lock"></i>
+              <p>
+                Data Protection
+              </p>
+            </a>
+          </li>
+          <!-- <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Simple Link
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li> -->
+        </ul>
+        <hr/>
+      </nav>
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-header">
+            PROJECT:
+          </li>
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            <a href="/project" class="nav-link {{'active' if active_page == 'new' }}">
+              <i class="nav-icon fas fa-file"></i>
+              <p>New</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/resume" class="nav-link {{'active' if active_page == 'resume' }}">
+              <i class="nav-icon fas fa-play"></i>
+              <p>Resume</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/result" class="nav-link {{'active' if active_page == 'result' }}">
+              <i class="nav-icon fas fa-chart-bar"></i>
+              <p>Result</p><i class="fa-solid fa-chart-scatter"></i>
+            </a>
+          </li>
+        </ul>
+        <hr/>
+      </nav>
+      <!-- /.sidebar-menu -->
+
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-header">
+            KNOWLEDGE:
+          </li>
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            <a href="/projects" class="nav-link {{'active' if active_page == 'projects' }}">
+              <i class="nav-icon fas fa-database"></i>
+              <p>Projects</p>
+            </a>
+          </li>
+        </ul>
+        <hr/>
+      </nav>
+      <!-- /.sidebar-menu -->
+
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-header">SEARCH:</li>
+        </ul>
+      </nav>
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Project ID" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+    <!-- /.sidebar -->
+  </aside>

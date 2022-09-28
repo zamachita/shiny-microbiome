@@ -1,0 +1,9 @@
+sample,group,short_reads_1,short_reads_2,long_reads
+C001,0,./data/SRR18697055_1.fastq.gz,./data/SRR18697055_2.fastq.gz,
+C002,0,./data/SRR18697066_1.fastq.gz,./data/SRR18697066_2.fastq.gz,
+C003,0,./data/SRR18697067_1.fastq.gz,./data/SRR18697067_2.fastq.gz,
+C004,0,./data/SRR18697068_1.fastq.gz,./data/SRR18697068_2.fastq.gz,
+C005,0,./data/SRR18697073_1.fastq.gz,./data/SRR18697073_2.fastq.gz,
+C006,0,./data/SRR18697074_1.fastq.gz,./data/SRR18697074_2.fastq.gz,
+C007,0,./data/SRR18697075_1.fastq.gz,./data/SRR18697075_2.fastq.gz,
+C008,0,./data/SRR18697076_1.fastq.gz,./data/SRR18697076_2.fastq.gz,

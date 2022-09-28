@@ -1,5 +1,26 @@
 [
   {
+    "name": "about",
+    "path": "/about",
+    "component": "C:\\\\zanestory\\\\sysmiome\\\\shiny-microbiome\\\\micro-frontend\\\\app-sysmiome\\\\pages\\\\about.vue",
+    "chunkName": "pages/about",
+    "_name": "_420cb218"
+  },
+  {
+    "name": "indexAdmin",
+    "path": "/indexAdmin",
+    "component": "C:\\\\zanestory\\\\sysmiome\\\\shiny-microbiome\\\\micro-frontend\\\\app-sysmiome\\\\pages\\\\indexAdmin.vue",
+    "chunkName": "pages/indexAdmin",
+    "_name": "_dd5141bc"
+  },
+  {
+    "name": "test",
+    "path": "/test",
+    "component": "C:\\\\zanestory\\\\sysmiome\\\\shiny-microbiome\\\\micro-frontend\\\\app-sysmiome\\\\pages\\\\test.vue",
+    "chunkName": "pages/test",
+    "_name": "_0a9c5957"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "C:\\\\zanestory\\\\sysmiome\\\\shiny-microbiome\\\\micro-frontend\\\\app-sysmiome\\\\pages\\\\index.vue",

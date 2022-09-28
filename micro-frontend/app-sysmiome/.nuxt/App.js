@@ -12,9 +12,10 @@ import '..\\node_modules\\bootstrap-vue\\dist\\bootstrap-vue.css'
 
 import '..\\node_modules\\prismjs\\themes\\prism.css'
 
-import _6f6c098b from './layouts/default.vue'
+import _1dea6804 from '..\\layouts\\adminLte.vue'
+import _6f6c098b from '..\\layouts\\default.vue'
 
-const layouts = { "_default": sanitizeComponent(_6f6c098b) }
+const layouts = { "_adminLte": sanitizeComponent(_1dea6804),"_default": sanitizeComponent(_6f6c098b) }
 
 export default {
   render (h, props) {

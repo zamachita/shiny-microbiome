@@ -2,7 +2,13 @@
   "NuxtLogo": {
     "description": "Auto imported from components/NuxtLogo.vue"
   },
-  "Tutorial": {
-    "description": "Auto imported from components/Tutorial.vue"
+  "PagesFooter": {
+    "description": "Auto imported from components/pages/Footer.vue"
+  },
+  "PagesNavBar": {
+    "description": "Auto imported from components/pages/NavBar.vue"
+  },
+  "PagesSideBar": {
+    "description": "Auto imported from components/pages/SideBar.vue"
   }
 }
