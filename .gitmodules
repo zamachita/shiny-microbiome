@@ -1,3 +1,6 @@
 [submodule "micro-backend/itsbreeze"]
 	path = micro-backend/itsbreeze
 	url = https://github.com/sysbiomics/itsbreeze/
+[submodule "micro-backend/minbreeze"]
+	path = micro-backend/minbreeze
+	url = https://github.com/sysbiomics/minbreeze
